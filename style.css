@@ -1,0 +1,237 @@
+:root {
+  --font-family: "Manrope", sans-serif;
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: 13px;
+  background-color: var(--Light-Grayish-Blue);
+  display: grid;
+  align-items: end;
+  justify-content: center;
+}
+main {
+  margin: 0 75px;
+  max-width: 700px;
+  display: flex;
+  align-items: stretch;
+  background-color: white;
+  border-radius: 15px;
+  justify-content: space-between;
+}
+section.img {
+  width: 100%;
+}
+img.img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px 0 0 15px;
+  object-fit: cover;
+  object-position: left;
+}
+h1,
+h4 {
+  color: var(--Very-Dark-Grayish-Blue);
+  margin-top: 0;
+}
+p {
+  color: var(--Desaturated-Dark-Blue);
+}
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 25px;
+}
+.info {
+  display: flex;
+  align-items: center;
+  width: 170px;
+  justify-content: space-between;
+}
+.data h4,
+.data p {
+  margin: 0 0 2px;
+}
+section.text {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+h1,
+.text > p {
+  padding-right: 30px;
+  margin: 0 0 15px 0;
+}
+
+img.avatar {
+  width: 40px;
+  border-radius: 50%;
+}
+.share-icon {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  background-color: var(--Light-Grayish-Blue);
+  border-radius: 50%;
+  align-items: center;
+  z-index: 1;
+}
+
+.share {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.share-window {
+  opacity: 0;
+  position: absolute;
+  bottom: 50px;
+  padding: 0 15px;
+  background-color: var(--Very-Dark-Grayish-Blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 250px;
+  height: 50px;
+  transition: 0.5s ease-out;
+  visibility: hidden;
+  border-radius: 10px;
+}
+.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+.share-window > p {
+  letter-spacing: 5px;
+  color: var(--Grayish-Blue);
+}
+span.arrow {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid var(--Very-Dark-Grayish-Blue);
+  position: absolute;
+  top: 50px;
+}
+.facebook:hover svg path {
+  fill: hsl(214, 90%, 52%);
+}
+.twitter:hover svg path {
+  fill: hsl(203, 89%, 53%);
+}
+.pinterest:hover svg path {
+  fill: hsl(354, 98%, 38%);
+}
+@media (min-width: 770px) {
+  .share-icon:hover {
+    background-color: var(--Very-Dark-Grayish-Blue);
+    cursor: pointer;
+  }
+  .share-icon:hover svg path {
+    fill: white !important;
+  }
+  .icon-active {
+    background-color: var(--Very-Dark-Grayish-Blue);
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 768px) {
+  main {
+    max-width: 350px;
+    height: auto;
+    flex-direction: column;
+    justify-content: normal;
+    align-items: normal;
+    position: relative;
+  }
+  section.img {
+    width: 100%;
+    height: 225px;
+  }
+  img.img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+    object-position: top;
+  }
+  section.text {
+    height: 100%;
+    justify-content: space-around;
+    padding: 30px 30px 20px;
+  }
+  h1,
+  .text > p {
+    padding: 0;
+    font-size: 14px;
+    margin: 0 0 25px 0;
+  }
+  .text > p {
+    font-size: 12px;
+  }
+  .profile {
+    min-width: 250px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .share {
+    position: inherit;
+  }
+  .share-window {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 70px;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 0 0 15px 15px;
+  }
+  .share-window > p {
+    padding: 0 20px 0 15px;
+  }
+  .share-icon {
+    top: 7px;
+    position: relative;
+  }
+  .facebook,
+  .twitter,
+  .pinterest {
+    padding-right: 20px;
+  }
+  .info {
+    padding-top: 10px;
+  }
+  span.arrow {
+    display: none;
+  }
+  .icon-active {
+    background-color: var(--Desaturated-Dark-Blue);
+  }
+}
